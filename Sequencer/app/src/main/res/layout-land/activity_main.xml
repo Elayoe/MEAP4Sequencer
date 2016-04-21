@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="1100dp"
+    android:layout_height="800dp"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.nicoline.sequencer.MainActivity"
+    android:background="#333434">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="1100dp"
+        android:layout_height="800dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="84dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="70dp"
+        android:id="@+id/layoutfordrumsandplay">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/playbutton"
+            android:background="@drawable/play" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/drum"
+            android:background="@drawable/drum"
+            android:layout_marginTop="60dp" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/highhat"
+            android:background="@drawable/highhat"
+            android:layout_marginTop="20dp" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/kickdrum"
+            android:background="@drawable/kickdrum"
+            android:layout_marginTop="20dp" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/klaphat"
+            android:background="@drawable/klaphat"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="1100dp"
+        android:layout_height="800dp"
+        android:id="@+id/layoutforblockpile">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/blockpile"
+            android:background="@drawable/blockpile"
+            android:layout_marginLeft="850dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="1100dp"
+        android:layout_height="800dp"
+        android:id="@+id/Layoutforvelocitybuttons"
+        android:layout_gravity="bottom">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/velocitybutton1"
+            android:background="@drawable/velocitycircle"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="120dp"
+            android:layout_marginBottom="-150dp" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/velocitybutton2"
+            android:background="@drawable/velocitycircle"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="-150dp"
+            android:layout_marginLeft="45dp" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/velocitybutton3"
+            android:background="@drawable/velocitycircle"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="-150dp"
+            android:layout_marginLeft="35dp" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/velocitybutton4"
+            android:background="@drawable/velocitycircle"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="-150dp"
+            android:layout_marginLeft="35dp" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/velocitybutton5"
+            android:background="@drawable/velocitycircle"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="-150dp"
+            android:layout_marginLeft="35dp" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/velocitybutton6"
+            android:background="@drawable/velocitycircle"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="-150dp"
+            android:layout_marginLeft="35dp" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/velocitybutton7"
+            android:background="@drawable/velocitycircle"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="-150dp"
+            android:layout_marginLeft="35dp" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/velocitybutton8"
+            android:background="@drawable/velocitycircle"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="-150dp"
+            android:layout_marginLeft="35dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layoutfortrack1">
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock00"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="150dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock10"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="150dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock20"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="150dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock30"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="150dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock40"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="150dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock50"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="150dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock60"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="150dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock70"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="150dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layoutfortrack2">
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock01"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="230dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock11"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="230dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock21"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="230dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock31"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="230dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock41"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="230dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock51"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="230dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock61"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="230dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock71"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="230dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:id="@+id/layoutfortrack3">
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock02"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="210dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock12"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="210dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock22"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="210dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock32"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="210dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock42"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="210dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock52"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="210dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock62"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="210dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock72"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="210dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:id="@+id/layoutfortrack4" >
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock03"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="290dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock13"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="290dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock23"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="290dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock33"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="290dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock43"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="290dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock53"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="290dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock63"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="290dp" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="70dp"
+            android:id="@+id/trackblock73"
+            android:longClickable="false"
+            android:background="@drawable/trackblock"
+            android:layout_marginTop="290dp" />
+    </LinearLayout>
+</RelativeLayout>
