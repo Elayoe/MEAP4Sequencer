@@ -25,6 +25,8 @@ public class TouchListenerVelocity implements View.OnTouchListener {
             //TODO: rotate the knob in the direction of the mouse while holding down
             //TODO: keep updating for the touch position and update the knob
 
+            //TODO: when one step is chosen, adjust all sequencer trackBlocks in that column
+
             return true;
         }
         else {

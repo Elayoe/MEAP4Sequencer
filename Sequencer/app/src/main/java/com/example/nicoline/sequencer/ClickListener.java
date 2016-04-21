@@ -12,6 +12,7 @@ public class ClickListener implements View.OnClickListener {
     //MediaPlayer mp;
 
     ImageView view;
+    //Start x and y coords of sequencer status bar
 
     public ClickListener(ImageView v) {
         view = v;
@@ -36,6 +37,7 @@ public class ClickListener implements View.OnClickListener {
 
         //TODO: play sounds
 
+        //MediaPlayer mp = MediaPlayer.create(this, R.raw.stone);
         //mp.start();
 
         //TODO: Start panning the sequencer status bar.

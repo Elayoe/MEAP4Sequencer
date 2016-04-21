@@ -10,7 +10,7 @@ public class MainActivity extends Activity {
 
     //Objects to hold sequencer track-block values
     class SequencerTrackBlock{
-        boolean bool = false;
+        boolean isToBePlayed = false;
         int volume; //TODO: set this volume to a default volume
     }
 
@@ -35,12 +35,7 @@ public class MainActivity extends Activity {
         //TODO: Add click listeners on both play and stop button
         //Example of listener for clicking the play button
         ImageView playB = (ImageView) findViewById(R.id.playbutton);
-        ImageView playButton = (ImageView) findViewById(R.id.playbutton);
-        System.out.println("playB: " + playB + ". PlayButton: " + playButton);
         playB.setOnClickListener(new ClickListener(playB));
-
-        //MediaPlayer mp = MediaPlayer.create(this, R.raw.stone);
-        //mp.start();
 
         //TODO: Add touch listeners on all blocks to be dragged
         //tutorial on drag and drop: http://code.tutsplus.com/tutorials/android-sdk-implementing-drag-and-drop-functionality--mobile-14402
