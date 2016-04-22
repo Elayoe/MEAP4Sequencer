@@ -10,11 +10,11 @@ import android.widget.ImageView;
  * Class for handling drag events on block objects to be dragged
  * Created by Nicoline on 20-04-2016.
  */
-public class TouchListener implements View.OnTouchListener {
+public class TouchListenerBlocks implements View.OnTouchListener {
 
     ImageView view;
 
-    public TouchListener(ImageView v) {
+    public TouchListenerBlocks(ImageView v) {
         view = v;
     }
 

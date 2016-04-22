@@ -1,17 +1,22 @@
 package com.example.nicoline.sequencer;
 
 import android.app.Activity;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 
 public class MainActivity extends Activity {
 
-    //TODO: store volume knobs here, så vi kan reference dem senere
+    ImageView velocityB1;
+    public SoundPool soundPlayer;
+    public int musicColumn[];
 
     //Objects to hold sequencer track-block values
     class SequencerTrackBlock{
         boolean isToBePlayed = false;
-        int volume; //TODO: set this volume to a default volume
+        int volume = 1;
     }
 
     //The sequencer which holds all current information of the step sequencer
@@ -25,7 +30,7 @@ public class MainActivity extends Activity {
         System.out.println("System is creating");
 
         //TODO: in the scene, add blocks to the block pile to be dragged
-        //TODO: Add black block images to the drawable folder - these should be viewed when placed in sequencer
+        //TODO: Black block image - should be viewed when placed in sequencer
 
         //TODO: Get references and place listeners on all interactive buttons as well as the movable yellow bar:
             //Play-button (onClick listener)
@@ -34,6 +39,7 @@ public class MainActivity extends Activity {
 
         //TODO: Add click listeners on both play and stop button
         addPlayAndStopListeners();
+        //TODO: make the stop button invisible as default/start
 
         //TODO: Add touch listeners on all blocks to be dragged
         addBlockListeners();
@@ -53,14 +59,46 @@ public class MainActivity extends Activity {
                 sequencer[i][j] = new SequencerTrackBlock(); //Has standard values
             }
         }
+
+        createSoundPool();
+    }
+
+    void createSoundPool() {
+        System.out.println("Creating sound pool and loading in sounds");
+
+        //SoundPool tutorial: http://www.101apps.co.za/index.php/articles/using-android-s-soundpool-class-a-tutorial.html
+        soundPlayer = new SoundPool(4, AudioManager.STREAM_MUSIC, 0);
+        //This SoundPool constructor is deprecated from API 21 and forward (we use 15).
+        //See here for newer version if we change API: http://stackoverflow.com/questions/17069955/play-sound-using-soundpool-example
+
+        //Wait for the pool to load in the sound files
+        soundPlayer.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+            @Override
+            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+                Log.i("OnLoadCompleteListener","Sound "+sampleId+" is being loaded.");
+
+                if(status == 0) {
+                    Log.i("OnLoadCompleteListener","Sound "+sampleId+" loaded successfully.");
+                    System.out.println("SoundId number " + sampleId + ": " + musicColumn[sampleId-1]);
+                }
+            }
+        });
+
+        //TODO: insert correct music files
+        //Load in sound files
+        musicColumn = new int[4];
+        musicColumn[0] = soundPlayer.load(getApplicationContext(), R.raw.plop, 1);
+        musicColumn[1] = soundPlayer.load(getApplicationContext(), R.raw.stone, 1);
+        musicColumn[2] = soundPlayer.load(getApplicationContext(), R.raw.plop, 1);
+        musicColumn[3] = soundPlayer.load(getApplicationContext(), R.raw.stone, 1);
     }
 
     /**
      * Method for adding (which? touch and drag?) listeners
      */
     void addVelocityListeners() {
-        ImageView velocityB1 = (ImageView) findViewById(R.id.velocitybutton1);
-        velocityB1.setOnTouchListener(new TouchListenerVelocity(velocityB1));
+        velocityB1 = (ImageView) findViewById(R.id.velocitybutton1);
+        velocityB1.setOnTouchListener(new TouchListenerVelocity());
     }
 
     /**
@@ -69,7 +107,7 @@ public class MainActivity extends Activity {
     void addPlayAndStopListeners() {
         //Example of listener for clicking the play button
         ImageView playB = (ImageView) findViewById(R.id.playbutton);
-        playB.setOnClickListener(new ClickListener(playB));
+        playB.setOnClickListener(new ClickListener(playB, MainActivity.this));
     }
 
     /**
@@ -80,7 +118,7 @@ public class MainActivity extends Activity {
         //For now this is the whole blockpile icon we are dragging - just to show how.
         //This method should probably be put on all blocks that are able to be dragged
         ImageView blockpile = (ImageView) findViewById(R.id.blockpile);
-        blockpile.setOnTouchListener(new TouchListener(blockpile));
+        blockpile.setOnTouchListener(new TouchListenerBlocks(blockpile));
     }
 
     /**

@@ -1,5 +1,6 @@
 package com.example.nicoline.sequencer;
 
+import android.app.Activity;
 import android.view.DragEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -8,7 +9,7 @@ import android.widget.ImageView;
  * Class to handle drop events onto trackBlocks.
  * Created by Nicoline on 20-04-2016.
  */
-public class DragListener implements View.OnDragListener {
+public class DragListener extends Activity implements View.OnDragListener {
 
     public DragListener() {
     }
@@ -38,7 +39,10 @@ public class DragListener implements View.OnDragListener {
                 View view = (View) event.getLocalState();
 
                 //stop displaying the view where it was before it was dragged
-                view.setVisibility(View.INVISIBLE);
+                //view.setVisibility(View.INVISIBLE);
+
+                //TODO: get reference to black block
+                //view.setBackgroundResource();
 
                 //TODO: move the image of the block (view) to the location og dropTarget and make its icon black
 
