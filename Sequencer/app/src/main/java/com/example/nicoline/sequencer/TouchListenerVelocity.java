@@ -18,12 +18,13 @@ public class TouchListenerVelocity implements View.OnTouchListener {
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
+        System.out.println("Dragging knob");
+        //TODO: Here the mouse position can be updated continously
+        //TODO: Snap the button to the closest of four positions (calculate distance between the four points)
+
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             //setup drag
-            System.out.println("Dragging knob");
-
-            //TODO: rotate the knob in the direction of the mouse while holding down
-            //TODO: keep updating for the touch position and update the knob
+            System.out.println("Start dragging knob");
 
             //TODO: when one step is chosen, adjust all sequencer trackBlocks in that column
 
