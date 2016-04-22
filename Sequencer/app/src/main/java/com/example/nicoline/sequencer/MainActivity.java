@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 public class MainActivity extends Activity {
 
+    //TODO: add velocity variables to be referenced from other classes
     ImageView velocityB1;
     public SoundPool soundPlayer;
     public int musicColumn[];

@@ -10,7 +10,7 @@ import android.widget.ImageView;
  * Class for handling click events on the start and stop buttons
  * Created by Nicoline on 20-04-2016.
  */
-public class ClickListener extends Activity implements View.OnClickListener {
+public class ClickListener implements View.OnClickListener {
 
     MainActivity main;
     //Handler h;
