@@ -10,6 +10,136 @@
     tools:context="com.example.nicoline.sequencer.MainActivity"
     android:background="#333434">
 
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="850dp"
+        android:id="@+id/blockpile" >
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/blockpile20"
+            android:background="@drawable/whitetui"
+            android:clickable="true" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block19"
+            android:background="@drawable/whitetui" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block18"
+            android:background="@drawable/whitetui" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block17"
+            android:background="@drawable/whitetui" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block16"
+            android:background="@drawable/whitetui"
+            android:clickable ="true"/>
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block15"
+            android:background="@drawable/whitetui" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block14"
+            android:background="@drawable/whitetui" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block13"
+            android:background="@drawable/whitetui" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block12"
+            android:background="@drawable/whitetui" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block11"
+            android:background="@drawable/whitetui" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block10"
+            android:background="@drawable/whitetui" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block9"
+            android:background="@drawable/whitetui" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block8"
+            android:background="@drawable/whitetui" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block7"
+            android:background="@drawable/whitetui" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block6"
+            android:background="@drawable/whitetui" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block5"
+            android:background="@drawable/whitetui" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block4"
+            android:background="@drawable/whitetui" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block3"
+            android:background="@drawable/whitetui" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block2"
+            android:background="@drawable/whitetui" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/block1"
+            android:background="@drawable/whitetui" />
+
+    </FrameLayout>
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="1100dp"
@@ -55,21 +185,6 @@
             android:id="@+id/klaphat"
             android:background="@drawable/klaphat"
             android:layout_marginTop="20dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="1100dp"
-        android:layout_height="800dp"
-        android:id="@+id/layoutforblockpile">
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:id="@+id/blockpile"
-            android:background="@drawable/blockpile"
-            android:layout_marginLeft="850dp" />
 
     </LinearLayout>
 
@@ -151,6 +266,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginBottom="-150dp"
             android:layout_marginLeft="35dp" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -442,4 +558,75 @@
             android:background="@drawable/trackblock"
             android:layout_marginTop="290dp" />
     </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:id="@+id/imageView"
+            android:background="@drawable/velocitycontroller"
+            android:layout_marginTop="490dp"
+            android:layout_marginLeft="105dp" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:id="@+id/imageView2"
+            android:background="@drawable/velocitycontroller"
+            android:layout_marginTop="490dp"
+            android:layout_marginLeft="15dp" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:id="@+id/imageView3"
+            android:background="@drawable/velocitycontroller"
+            android:layout_marginTop="490dp"
+            android:layout_marginLeft="5dp" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:id="@+id/imageView4"
+            android:background="@drawable/velocitycontroller"
+            android:layout_marginTop="490dp"
+            android:layout_marginLeft="5dp" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:id="@+id/imageView5"
+            android:background="@drawable/velocitycontroller"
+            android:layout_marginTop="490dp"
+            android:layout_marginLeft="5dp" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:id="@+id/imageView6"
+            android:background="@drawable/velocitycontroller"
+            android:layout_marginTop="490dp"
+            android:layout_marginLeft="5dp" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:id="@+id/imageView7"
+            android:background="@drawable/velocitycontroller"
+            android:layout_marginTop="490dp"
+            android:layout_marginLeft="5dp" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:id="@+id/imageView8"
+            android:background="@drawable/velocitycontroller"
+            android:layout_marginTop="490dp"
+            android:layout_marginLeft="5dp" />
+    </LinearLayout>
+
 </RelativeLayout>
