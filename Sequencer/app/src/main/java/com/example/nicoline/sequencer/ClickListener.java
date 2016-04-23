@@ -39,6 +39,10 @@ public class ClickListener implements View.OnClickListener {
 
         //TODO: check if play-button or stop-button (use the view variable)
 
+        if(playB){
+
+        }
+        
         //--------------------------------------------------------------------
 
         //TODO: play button pressed:
@@ -53,25 +57,27 @@ public class ClickListener implements View.OnClickListener {
 
         //TODO: play sounds:
         //Play sequencer
-        Runnable r = new Runnable() {
-            @Override
-            public void run(){
-                for(int i = 0; i < main.sequencer.length; i++) {
-                    for(int j = 0; j < main.sequencer[0].length; j++) {
-                        if(main.sequencer[i][j].isToBePlayed == true) { //If we want to play this trackBlock
-                            main.soundPlayer.play(main.musicColumn[i],
-                                    main.sequencer[i][j].volume,
-                                    main.sequencer[i][j].volume,
-                                    priority,
-                                    no_loop,
-                                    normal_playback_rate);
+        {
+            Runnable r = new Runnable() {
+                @Override
+                public void run() {
+                    for (int i = 0; i < main.sequencer.length; i++) {
+                        for (int j = 0; j < main.sequencer[0].length; j++) {
+                            if (main.sequencer[i][j].isToBePlayed == true) { //If we want to play this trackBlock
+                                main.soundPlayer.play(main.musicColumn[i],
+                                        main.sequencer[i][j].volume,
+                                        main.sequencer[i][j].volume,
+                                        priority,
+                                        no_loop,
+                                        normal_playback_rate);
+                            }
                         }
+                        //TODO: Wait until next colum should be played
+                        //h.postDelayed(this, 1000);
                     }
-                    //TODO: Wait until next colum should be played
-                    //h.postDelayed(this, 1000);
                 }
-            }
-        };
+            };
+        }
         r.run();
         //h = new Handler();
 

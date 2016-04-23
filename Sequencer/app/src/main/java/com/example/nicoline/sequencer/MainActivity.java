@@ -41,6 +41,7 @@ public class MainActivity extends Activity {
         //TODO: Add click listeners on both play and stop button
         addPlayAndStopListeners();
         //TODO: make the stop button invisible as default/start
+        stopB.setInvisibility(4);
 
         //TODO: Add touch listeners on all blocks to be dragged
         addBlockListeners();
@@ -85,13 +86,12 @@ public class MainActivity extends Activity {
             }
         });
 
-        //TODO: insert correct music files
         //Load in sound files
         musicColumn = new int[4];
-        musicColumn[0] = soundPlayer.load(getApplicationContext(), R.raw.plop, 1);
-        musicColumn[1] = soundPlayer.load(getApplicationContext(), R.raw.stone, 1);
-        musicColumn[2] = soundPlayer.load(getApplicationContext(), R.raw.plop, 1);
-        musicColumn[3] = soundPlayer.load(getApplicationContext(), R.raw.stone, 1);
+        musicColumn[0] = soundPlayer.load(getApplicationContext(), R.raw.snare, 1);
+        musicColumn[1] = soundPlayer.load(getApplicationContext(), R.raw.cl_hihat, 1);
+        musicColumn[2] = soundPlayer.load(getApplicationContext(), R.raw.kick2, 1);
+        musicColumn[3] = soundPlayer.load(getApplicationContext(), R.raw.open_hh, 1);
     }
 
     /**
