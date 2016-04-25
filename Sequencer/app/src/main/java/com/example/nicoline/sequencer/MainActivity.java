@@ -41,7 +41,6 @@ public class MainActivity extends Activity {
         //TODO: Add click listeners on both play and stop button
         addPlayAndStopListeners();
         //TODO: make the stop button invisible as default/start
-        stopB.setInvisibility(4);
 
         //TODO: Add touch listeners on all blocks to be dragged
         addBlockListeners();
