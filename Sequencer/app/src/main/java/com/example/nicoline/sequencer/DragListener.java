@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.provider.Settings;
 import android.view.DragEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 /**
  * Class to handle drop events onto trackBlocks.
@@ -41,6 +43,7 @@ public class DragListener extends Activity implements View.OnDragListener {
 
                 //handle the dragged view being dropped over a target view
                 view = (View) event.getLocalState();
+                System.out.println("Drag object: " + view);
 
                 //stop displaying the view where it was before it was dragged
                 //view.setVisibility(View.INVISIBLE);
@@ -48,23 +51,38 @@ public class DragListener extends Activity implements View.OnDragListener {
                 //Set icon black
                 //TODO: set black (right now we can't see because of black background, therfore yellow to test
                 //view.setBackgroundResource(R.drawable.blacktui);
-                view.setBackgroundResource(R.drawable.yellowtui);
+                view.setBackgroundResource(R.drawable.whitetui);
                 //view.setBackgroundResource(R.drawable.play);
                 //TODO: is it resulting in correct size? Else this should be corrected
 
                 //Move to the postition of the trackBlock
                 view.setX(dropTarget.getX());
                 view.setY(dropTarget.getY());
-                System.out.println("Moving to pos: " + dropTarget.getX() + "," + dropTarget.getY());
+                System.out.println("Moving to pos: " + dropTarget.getX() + "," + dropTarget.getY() + ". View: " + view);
+
 
                 //Set in front of everything
-                view.bringToFront();
-                //view.setVisibility(view.VISIBLE);
+                //view.bringToFront();
+                view.setVisibility(View.VISIBLE);
+                //view.setAlpha(1f);//opaque, visible
 
                 break;
             case DragEvent.ACTION_DRAG_ENDED:
                 //no action necessary
-                //System.out.println("Drag ended. Result: " + event.getResult());
+                //view = (View) event.getLocalState();
+                //System.out.println("Drag ended. Result: " + event.getResult() + ". View: " + view);
+                if (dropEventNotHandled(event)) {
+                    System.out.println("Drop event not handled");
+                    view.setVisibility(View.VISIBLE);
+                }
+
+                /**
+                if(view != null) {
+                    view.setVisibility(View.VISIBLE);
+                    view.setVisibility(view.VISIBLE);
+                }*/
+                //view.setVisibility(View.VISIBLE);
+                //view.setVisibility(view.VISIBLE);
                 /**
                 if(event.getResult() == false && notSet) {
                     view.setBackgroundResource(R.drawable.whitetui);
@@ -86,5 +104,9 @@ public class DragListener extends Activity implements View.OnDragListener {
         }
 
         return true;
+    }
+
+    private boolean dropEventNotHandled(DragEvent dragEvent) {
+        return !dragEvent.getResult();
     }
 }
