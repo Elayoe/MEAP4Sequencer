@@ -36,6 +36,9 @@ public class ClickListener implements View.OnClickListener {
 
         //TODO: check if play-button or stop-button (use the view variable)
 
+
+
+
         //--------------------------------------------------------------------
 
         //TODO: play button pressed:
@@ -44,9 +47,13 @@ public class ClickListener implements View.OnClickListener {
          * Play sounds
          * Start sequencer status bar
          */
+    if(R.id.playbutton == v.getId()) {
+        System.out.println("And Play was clicked!");
 
         //view.setVisibility(View.INVISIBLE); //Remove the image of the button
         //TODO: make stop-button visible
+        v.setVisibility(view.INVISIBLE);
+        main.findViewById(R.id.stopbutton).setVisibility(view.VISIBLE);
 
         //TODO: play sounds:
         playSoundsSimultaneously();
@@ -54,7 +61,7 @@ public class ClickListener implements View.OnClickListener {
         //TODO: Start panning the sequencer status bar.
         //When finished two cycles (an orange and white background cycle), move back to start and repeat
         startStatusBar();
-
+    }
         //---------------------------------------------------------------------
 
         //TODO: stop button pressed:
@@ -63,13 +70,18 @@ public class ClickListener implements View.OnClickListener {
          * Stop sounds
          * Stop and reset sequencer status bar
          */
+        if(R.id.stopbutton == v.getId()) {
+            System.out.println("And Stop was clicked!");
 
-        //view.setVisibility(View.INVISIBLE); //Remove the image of the button
-        //TODO: make start-button visible
-
-        //TODO: stop sounds
-
-        //TODO: Stop panning the sequencer status bar and reset it back to its original place
+            //view.setVisibility(View.INVISIBLE); //Remove the image of the button
+            //TODO: make start-button visible
+            v.setVisibility(view.INVISIBLE);
+            main.findViewById(R.id.playbutton).setVisibility(view.VISIBLE);
+            //TODO: stop sounds
+            main.soundPlayer.stop(0);
+            //TODO: Stop panning the sequencer status bar and reset it back to its original place
+            resetStatusBar();
+        }
     }
 
     /**
@@ -77,7 +89,7 @@ public class ClickListener implements View.OnClickListener {
      */
     void playSoundsSimultaneously(){
         //Play sequencer
-        Runnable r = new Runnable() {
+        final Runnable r = new Runnable() {
             @Override
             public void run(){
                 for(int i = 0; i < main.sequencer.length; i++) {
@@ -93,6 +105,7 @@ public class ClickListener implements View.OnClickListener {
                     }
                     //TODO: Wait until next colum should be played
                     //h.postDelayed(this, 1000);
+
                 }
             }
         };
@@ -122,6 +135,10 @@ public class ClickListener implements View.OnClickListener {
      * Method that starts panning the status bar
      */
     void startStatusBar() {
+
+    }
+
+    void resetStatusBar(){
 
     }
 }

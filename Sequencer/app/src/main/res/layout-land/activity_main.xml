@@ -29,6 +29,14 @@
             android:background="@drawable/play" />
 
         <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/stopbutton"
+            android:background="@drawable/stopbutton"
+            android:visibility="invisible"/>
+
+
+        <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:id="@+id/drum"

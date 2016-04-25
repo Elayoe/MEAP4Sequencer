@@ -88,10 +88,10 @@ public class MainActivity extends Activity {
         //TODO: insert correct music files
         //Load in sound files
         musicColumn = new int[4];
-        musicColumn[0] = soundPlayer.load(getApplicationContext(), R.raw.plop, 1);
-        musicColumn[1] = soundPlayer.load(getApplicationContext(), R.raw.stone, 1);
-        musicColumn[2] = soundPlayer.load(getApplicationContext(), R.raw.plop, 1);
-        musicColumn[3] = soundPlayer.load(getApplicationContext(), R.raw.stone, 1);
+        musicColumn[0] = soundPlayer.load(getApplicationContext(), R.raw.snare, 1);
+        musicColumn[1] = soundPlayer.load(getApplicationContext(), R.raw.cl_hihat, 1);
+        musicColumn[2] = soundPlayer.load(getApplicationContext(), R.raw.kick2, 1);
+        musicColumn[3] = soundPlayer.load(getApplicationContext(), R.raw.open_hh, 1);
     }
 
     /**
@@ -109,6 +109,9 @@ public class MainActivity extends Activity {
         //Example of listener for clicking the play button
         ImageView playB = (ImageView) findViewById(R.id.playbutton);
         playB.setOnClickListener(new ClickListener(playB, MainActivity.this));
+        ImageView stopB = (ImageView) findViewById(R.id.stopbutton);
+        stopB.setOnClickListener(new ClickListener(stopB, MainActivity.this));
+
     }
 
     /**
