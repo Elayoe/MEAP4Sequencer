@@ -128,8 +128,79 @@ public class MainActivity extends Activity {
      */
     void addTrackBlockListeners() {
         //tutorial on drag and drop: http://code.tutsplus.com/tutorials/android-sdk-implementing-drag-and-drop-functionality--mobile-14402
+        //TODO: Layouts overshadowing?
+        //Row 1
         ImageView trackBlock00 = (ImageView) findViewById(R.id.trackblock00);
         trackBlock00.setOnDragListener(new DragListener());
+        ImageView trackBlock10 = (ImageView) findViewById(R.id.trackblock10);
+        trackBlock10.setOnDragListener(new DragListener());
+        ImageView trackBlock20 = (ImageView) findViewById(R.id.trackblock20);
+        trackBlock20.setOnDragListener(new DragListener());
+        ImageView trackBlock30 = (ImageView) findViewById(R.id.trackblock30);
+        trackBlock30.setOnDragListener(new DragListener());
+        ImageView trackBlock40 = (ImageView) findViewById(R.id.trackblock40);
+        trackBlock40.setOnDragListener(new DragListener());
+        ImageView trackBlock50 = (ImageView) findViewById(R.id.trackblock50);
+        trackBlock50.setOnDragListener(new DragListener());
+        ImageView trackBlock60 = (ImageView) findViewById(R.id.trackblock60);
+        trackBlock60.setOnDragListener(new DragListener());
+        ImageView trackBlock70 = (ImageView) findViewById(R.id.trackblock70);
+        trackBlock70.setOnDragListener(new DragListener());
+
+
+        //Row 2
+        ImageView trackBlock01 = (ImageView) findViewById(R.id.trackblock01);
+        trackBlock01.setOnDragListener(new DragListener());
+        ImageView trackBlock11 = (ImageView) findViewById(R.id.trackblock11);
+        trackBlock11.setOnDragListener(new DragListener());
+        ImageView trackBlock21 = (ImageView) findViewById(R.id.trackblock21);
+        trackBlock21.setOnDragListener(new DragListener());
+        ImageView trackBlock31 = (ImageView) findViewById(R.id.trackblock31);
+        trackBlock31.setOnDragListener(new DragListener());
+        ImageView trackBlock41 = (ImageView) findViewById(R.id.trackblock41);
+        trackBlock41.setOnDragListener(new DragListener());
+        ImageView trackBlock51 = (ImageView) findViewById(R.id.trackblock51);
+        trackBlock51.setOnDragListener(new DragListener());
+        ImageView trackBlock61 = (ImageView) findViewById(R.id.trackblock61);
+        trackBlock61.setOnDragListener(new DragListener());
+        ImageView trackBlock71 = (ImageView) findViewById(R.id.trackblock71);
+        trackBlock71.setOnDragListener(new DragListener());
+
+        //Row 3
+        ImageView trackBlock02 = (ImageView) findViewById(R.id.trackblock02);
+        trackBlock02.setOnDragListener(new DragListener());
+        ImageView trackBlock12 = (ImageView) findViewById(R.id.trackblock12);
+        trackBlock12.setOnDragListener(new DragListener());
+        ImageView trackBlock22 = (ImageView) findViewById(R.id.trackblock22);
+        trackBlock22.setOnDragListener(new DragListener());
+        ImageView trackBlock32 = (ImageView) findViewById(R.id.trackblock32);
+        trackBlock32.setOnDragListener(new DragListener());
+        ImageView trackBlock42 = (ImageView) findViewById(R.id.trackblock42);
+        trackBlock42.setOnDragListener(new DragListener());
+        ImageView trackBlock52 = (ImageView) findViewById(R.id.trackblock52);
+        trackBlock52.setOnDragListener(new DragListener());
+        ImageView trackBlock62 = (ImageView) findViewById(R.id.trackblock62);
+        trackBlock62.setOnDragListener(new DragListener());
+        ImageView trackBlock72 = (ImageView) findViewById(R.id.trackblock72);
+        trackBlock72.setOnDragListener(new DragListener());
+
+        //Row 4
+        ImageView trackBlock03 = (ImageView) findViewById(R.id.trackblock03);
+        trackBlock03.setOnDragListener(new DragListener());
+        ImageView trackBlock13 = (ImageView) findViewById(R.id.trackblock13);
+        trackBlock13.setOnDragListener(new DragListener());
+        ImageView trackBlock23 = (ImageView) findViewById(R.id.trackblock23);
+        trackBlock23.setOnDragListener(new DragListener());
+        ImageView trackBlock33 = (ImageView) findViewById(R.id.trackblock33);
+        trackBlock33.setOnDragListener(new DragListener());
+        ImageView trackBlock43 = (ImageView) findViewById(R.id.trackblock43);
+        trackBlock43.setOnDragListener(new DragListener());
+        ImageView trackBlock53 = (ImageView) findViewById(R.id.trackblock53);
+        trackBlock53.setOnDragListener(new DragListener());
+        ImageView trackBlock63 = (ImageView) findViewById(R.id.trackblock63);
+        trackBlock63.setOnDragListener(new DragListener());
+        ImageView trackBlock73 = (ImageView) findViewById(R.id.trackblock73);
+        trackBlock73.setOnDragListener(new DragListener());
     }
 
     // http://www.tutorialspoint.com/android/android_drag_and_drop.htm
