@@ -45,26 +45,6 @@ public class MainActivity extends Activity {
 
         //TODO: Add touch listeners on all blocks to be dragged
         addBlockListeners();
-        block1.setOnTouchListener(new TouchListenerBlocks(block1));
-        block2.setOnTouchListener(new TouchListenerBlocks(block2));
-        block3.setOnTouchListener(new TouchListenerBlocks(block3));
-        block4.setOnTouchListener(new TouchListenerBlocks(block4));
-        block5.setOnTouchListener(new TouchListenerBlocks(block5));
-        block6.setOnTouchListener(new TouchListenerBlocks(block6));
-        block7.setOnTouchListener(new TouchListenerBlocks(block7));
-        block8.setOnTouchListener(new TouchListenerBlocks(block8));
-        block9.setOnTouchListener(new TouchListenerBlocks(block9));
-        block10.setOnTouchListener(new TouchListenerBlocks(block10));
-        block11.setOnTouchListener(new TouchListenerBlocks(block11));
-        block12.setOnTouchListener(new TouchListenerBlocks(block12));
-        block13.setOnTouchListener(new TouchListenerBlocks(block13));
-        block14.setOnTouchListener(new TouchListenerBlocks(block14));
-        block15.setOnTouchListener(new TouchListenerBlocks(block15));
-        block16.setOnTouchListener(new TouchListenerBlocks(block16));
-        block17.setOnTouchListener(new TouchListenerBlocks(block17));
-        block18.setOnTouchListener(new TouchListenerBlocks(block18));
-        block19.setOnTouchListener(new TouchListenerBlocks(block19));
-        block20.setOnTouchListener(new TouchListenerBlocks(block20));
 
         //TODO: Add onDrag listeners on all trackBlocks to be dropped on
         addTrackBlockListeners();
@@ -139,8 +119,32 @@ public class MainActivity extends Activity {
         //tutorial on drag and drop: http://code.tutsplus.com/tutorials/android-sdk-implementing-drag-and-drop-functionality--mobile-14402
         //For now this is the whole blockpile icon we are dragging - just to show how.
         //This method should probably be put on all blocks that are able to be dragged
-        ImageView blockpile = (ImageView) findViewById(R.id.blockpile);
-        blockpile.setOnTouchListener(new TouchListenerBlocks(blockpile));
+        //ImageView blockpile = (ImageView) findViewById(R.id.blockpile);
+        //blockpile.setOnTouchListener(new TouchListenerBlocks(blockpile));
+
+        ImageView block1 = (ImageView) findViewById(R.id.block1);
+        block1.setOnTouchListener(new TouchListenerBlocks(block1));
+        /**
+        block2.setOnTouchListener(new TouchListenerBlocks(block2));
+        block3.setOnTouchListener(new TouchListenerBlocks(block3));
+        block4.setOnTouchListener(new TouchListenerBlocks(block4));
+        block5.setOnTouchListener(new TouchListenerBlocks(block5));
+        block6.setOnTouchListener(new TouchListenerBlocks(block6));
+        block7.setOnTouchListener(new TouchListenerBlocks(block7));
+        block8.setOnTouchListener(new TouchListenerBlocks(block8));
+        block9.setOnTouchListener(new TouchListenerBlocks(block9));
+        block10.setOnTouchListener(new TouchListenerBlocks(block10));
+        block11.setOnTouchListener(new TouchListenerBlocks(block11));
+        block12.setOnTouchListener(new TouchListenerBlocks(block12));
+        block13.setOnTouchListener(new TouchListenerBlocks(block13));
+        block14.setOnTouchListener(new TouchListenerBlocks(block14));
+        block15.setOnTouchListener(new TouchListenerBlocks(block15));
+        block16.setOnTouchListener(new TouchListenerBlocks(block16));
+        block17.setOnTouchListener(new TouchListenerBlocks(block17));
+        block18.setOnTouchListener(new TouchListenerBlocks(block18));
+        block19.setOnTouchListener(new TouchListenerBlocks(block19));*/
+        ImageView block20 = (ImageView) findViewById(R.id.block20);
+        block20.setOnTouchListener(new TouchListenerBlocks(block20));
     }
 
     /**
@@ -168,7 +172,7 @@ public class MainActivity extends Activity {
         ImageView trackBlock70 = (ImageView) findViewById(R.id.trackblock70);
         trackBlock70.setOnDragListener(new DragListener());
 
-
+/**
         //Row 2
         ImageView trackBlock01 = (ImageView) findViewById(R.id.trackblock01);
         trackBlock01.setOnDragListener(new DragListener());
@@ -221,7 +225,7 @@ public class MainActivity extends Activity {
         ImageView trackBlock63 = (ImageView) findViewById(R.id.trackblock63);
         trackBlock63.setOnDragListener(new DragListener());
         ImageView trackBlock73 = (ImageView) findViewById(R.id.trackblock73);
-        trackBlock73.setOnDragListener(new DragListener());
+        trackBlock73.setOnDragListener(new DragListener());*/
     }
 
     // http://www.tutorialspoint.com/android/android_drag_and_drop.htm
