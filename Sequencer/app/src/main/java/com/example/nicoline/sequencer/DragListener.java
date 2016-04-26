@@ -3,6 +3,7 @@ package com.example.nicoline.sequencer;
 import android.app.Activity;
 import android.provider.Settings;
 import android.view.DragEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -16,95 +17,113 @@ public class DragListener extends Activity implements View.OnDragListener {
 
     View view; //The ImageView being dragged
     boolean notSet = true;
+    MainActivity main;
+    int trackX;
+    int trackY;
 
-    public DragListener() {
+    public DragListener(MainActivity ma, int x, int y) {
+        main = ma;
+        trackX = x;
+        trackY = y;
     }
 
     @Override
     public boolean onDrag(View dropTarget, DragEvent event) {
         //handle drag events
 
+        view = (View) event.getLocalState();
+        int dragAction = event.getAction();
+
+        if (dragAction == DragEvent.ACTION_DRAG_EXITED) {
+
+        } else if (dragAction == DragEvent.ACTION_DRAG_ENTERED) {
+
+        } else if (dragAction == DragEvent.ACTION_DRAG_ENDED) {
+            if (dropEventNotHandled(event)) {
+                //System.out.println("Drag event not handled. Setting visible");
+                view.setVisibility(View.VISIBLE);
+                view.setX(1788);
+                view.setY(72);
+            }
+        } else if (dragAction == DragEvent.ACTION_DROP) {
+            view.setBackgroundResource(R.drawable.whitetui);
+
+            //Move to the postition of the trackBlock
+            view.setX(dropTarget.getX());
+            view.setY(dropTarget.getY());
+            //System.out.println("Moving to pos: " + dropTarget.getX() + "," + dropTarget.getY() + ". View: " + view);
+
+            view.setVisibility(View.VISIBLE);
+
+            //Notify the sequencer about the placement of the block
+            //System.out.println("Sequencer trackblock " + trackX + "," + trackY);
+            main.sequencer[trackX][trackY].isToBePlayed = true;
+            System.out.println("DragListener: Sequencer " + trackX + "," + trackY + " is " + main.sequencer[trackX][trackY].isToBePlayed);
+
+            //Nofify block about postion
+            //System.out.println("Sending block id: " + view.getId() + " via main object: " + main);
+            main.notifyBlock(view.getId(), trackX, trackY);
+        }
+        return true;
+    }
+
+
+        /**
         switch (event.getAction()) {
             case DragEvent.ACTION_DRAG_STARTED:
                 //no action necessary
                 //System.out.println("Drag started");
-                break;
+                //break;
             case DragEvent.ACTION_DRAG_ENTERED:
                 //no action necessary
-                System.out.println("Drag entered release area");
-                break;
+                //System.out.println("Drag entered release area");
+                //break;
             case DragEvent.ACTION_DRAG_EXITED:
                 //no action necessary
-                System.out.println("Drag exited release area");
-                break;
+                //System.out.println("Drag exited release area");
+                //break;
             case DragEvent.ACTION_DROP:
                 //handle the dragged view being dropped over a drop view
-                System.out.println("Drag object dropped");
+                //System.out.println("Drag object dropped");
 
                 //handle the dragged view being dropped over a target view
-                view = (View) event.getLocalState();
-                System.out.println("Drag object: " + view);
-
-                //stop displaying the view where it was before it was dragged
-                //view.setVisibility(View.INVISIBLE);
+                //view = (View) event.getLocalState();
+                //System.out.println("Drag object: " + view + ". Drop target " + dropTarget);
 
                 //Set icon black
                 //TODO: set black (right now we can't see because of black background, therfore yellow to test
                 //view.setBackgroundResource(R.drawable.blacktui);
                 view.setBackgroundResource(R.drawable.whitetui);
-                //view.setBackgroundResource(R.drawable.play);
-                //TODO: is it resulting in correct size? Else this should be corrected
 
                 //Move to the postition of the trackBlock
                 view.setX(dropTarget.getX());
                 view.setY(dropTarget.getY());
-                System.out.println("Moving to pos: " + dropTarget.getX() + "," + dropTarget.getY() + ". View: " + view);
+                //System.out.println("Moving to pos: " + dropTarget.getX() + "," + dropTarget.getY() + ". View: " + view);
 
-
-                //Set in front of everything
-                //view.bringToFront();
                 view.setVisibility(View.VISIBLE);
-                //view.setAlpha(1f);//opaque, visible
 
-                break;
+                //Notify the sequencer about the placement of the block
+                //System.out.println("Sequencer trackblock " + trackX + "," + trackY);
+                main.sequencer[trackX][trackY].isToBePlayed = true;
+                System.out.println("DragListener: Sequencer " + trackX + "," + trackY + " is " + main.sequencer[trackX][trackY].isToBePlayed);
+
+                //Nofify block about postion
+                //System.out.println("Sending block id: " + view.getId() + " via main object: " + main);
+                main.notifyBlock(view.getId(), trackX, trackY);
+
+                //break;
             case DragEvent.ACTION_DRAG_ENDED:
-                //no action necessary
-                //view = (View) event.getLocalState();
-                //System.out.println("Drag ended. Result: " + event.getResult() + ". View: " + view);
                 if (dropEventNotHandled(event)) {
-                    System.out.println("Drop event not handled");
                     view.setVisibility(View.VISIBLE);
                 }
 
-                /**
-                if(view != null) {
-                    view.setVisibility(View.VISIBLE);
-                    view.setVisibility(view.VISIBLE);
-                }*/
-                //view.setVisibility(View.VISIBLE);
-                //view.setVisibility(view.VISIBLE);
-                /**
-                if(event.getResult() == false && notSet) {
-                    view.setBackgroundResource(R.drawable.whitetui);
-
-                    //TODO: why are we not getting any coords? Change this when the blocks are inserted
-                    //Start position of blocks:
-                    float blockX = findViewById(R.id.blockpile).getX();
-                    float blockY = findViewById(R.id.blockpile).getY();
-
-                    System.out.println("Start position: " + blockX + "," + blockY);
-                    view.setX(blockX);
-                    view.setY(blockY);
-
-                    notSet = false; //So other listeners does not update again
-                }*/
-                break;
+                //break;
             default:
-                break;
+                //break;
         }
 
         return true;
-    }
+    }*/
 
     private boolean dropEventNotHandled(DragEvent dragEvent) {
         return !dragEvent.getResult();
